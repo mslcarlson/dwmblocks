@@ -1,4 +1,4 @@
-PREFIX ?= /usr/local
+PREFIX ?= 
 
 output: dwmblocks.c blocks.h
 	cc `pkg-config --cflags x11` `pkg-config --libs x11` dwmblocks.c -o dwmblocks
