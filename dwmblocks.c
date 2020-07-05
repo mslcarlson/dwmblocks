@@ -4,6 +4,7 @@
 #include<unistd.h>
 #include<signal.h>
 #include<X11/Xlib.h>
+#include<time.h>
 #define LENGTH(X)               (sizeof(X) / sizeof (X[0]))
 #define CMDLENGTH		50
 
@@ -39,6 +40,8 @@ static void (*writestatus) () = setroot;
 //opens process *cmd and stores output in *output
 void getcmd(const Block *block, char *output)
 {
+	nanosleep((const struct timespec[]){{0, 100000000L}}, NULL);
+
 	if (block->signal)
 	{
         	output[0] = block->signal;

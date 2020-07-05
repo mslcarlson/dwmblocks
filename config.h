@@ -3,13 +3,13 @@ static const Block blocks[] = {
 	/* Command */	 /* Update Interval */	/* Update Signal */
         {"archupdates",  0,                     1},
 	{"mail",         0,                     2},
-	{"news",         0,                     3}, 
-	{"wifi",	 0, 			4},
+	{"rss",          0,                     3}, 
+	{"inet",	 5, 			4},
 	{"volume",     	 0, 			5},
-	{"battery",      1, 			6},
+	{"battery",      5, 			6},
 	{"backlight",    0,                     7}, 
-	{"clock",        1, 			8},
-	{"calendar",     1,                     9},
+	{"clock",        5, 			8},
+	{"calendar",     5,                     9},
 };
 
 // sets delimeter between status commands. NULL character ('\0') means no delimeter.
