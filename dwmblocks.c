@@ -40,7 +40,7 @@ static void (*writestatus) () = setroot;
 //opens process *cmd and stores output in *output
 void getcmd(const Block *block, char *output)
 {
-	nanosleep((const struct timespec[]){{0, 100000000L}}, NULL);
+  nanosleep((const struct timespec[]){{0, 100000000L}}, NULL);
 
 	if (block->signal)
 	{
@@ -75,7 +75,7 @@ void getcmds(int time)
 {
 	const Block* current;
 	for(int i = 0; i < LENGTH(blocks); i++)
-	{	
+	{
 		current = blocks + i;
 		if ((current->interval != 0 && time % current->interval == 0) || time == -1)
 			getcmd(current,statusbar[i]);
@@ -98,7 +98,7 @@ void setupsignals()
 {
 	struct sigaction sa;
 	for(int i = 0; i < LENGTH(blocks); i++)
-	{	  
+	{
 		if (blocks[i].signal > 0) {
 			signal(SIGRTMIN+blocks[i].signal, sighandler);
 			sigaddset(&sa.sa_mask, SIGRTMIN+blocks[i].signal); // ignore signal when handling SIGUSR1
@@ -186,7 +186,7 @@ void termhandler(int signum)
 int main(int argc, char** argv)
 {
 	for(int i = 0; i < argc; i++)
-	{	
+	{
 		if (!strcmp("-d",argv[i]))
 			delim = argv[++i];
 		else if(!strcmp("-p",argv[i]))
